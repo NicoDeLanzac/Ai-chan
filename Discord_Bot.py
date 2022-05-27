@@ -5,6 +5,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
+    await client.change_presence(activity=discord.Activity('Hentai', type = discord.ActivityType.watching))
     print('Logged in as {0.user}'.format(client))
 
 @client.event
