@@ -1,11 +1,12 @@
 import discord
 from datetime import datetime
+from pathlib import Path
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Activity('Hentai', type = discord.ActivityType.watching))
+    await client.change_presence(activity=discord.Activity(name = 'Hentai', type = discord.ActivityType.watching))
     print('Logged in as {0.user}'.format(client))
 
 @client.event
@@ -32,7 +33,6 @@ async def on_voice_state_update(member, before, after):
             await channel.send("`" + str_date_time + " " + member.name + " ging von " + before.channel.name + " nach " + after.channel.name + "`")
  
 
-from pathlib import Path
 bot_token = Path('./token.txt').read_text()
 
 client.run(bot_token)
