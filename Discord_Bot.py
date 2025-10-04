@@ -6,24 +6,13 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Activity(name = 'Hentai', type = discord.ActivityType.watching))
     print('Logged in as {0.user}'.format(client))
-
-@client.event
-async def on_message(message):
-    if message.content.startswith('!'):
-        if message.author == client.user:
-            return
-
-        if message.content.startswith('!hello'):
-            await message.channel.send('Hello!')
-
 
 @client.event
 async def on_voice_state_update(member, before, after):
     dt = datetime.now()
     str_date_time = dt.strftime("%d-%m-%Y, %H:%M:%S")
-    channel = client.get_channel(962432876475998298)
+    channel = client.get_channel(1424179449795969086)
     if after.channel is None and before.channel is not None:
         await channel.send("`" + str_date_time + " " + member.name + " verliess den Channel " + before.channel.name + "`")
     if before.channel is None and after.channel is not None:
