@@ -1,3 +1,4 @@
+import os
 import discord
 from datetime import datetime
 from pathlib import Path
@@ -22,6 +23,6 @@ async def on_voice_state_update(member, before, after):
             await channel.send("`" + str_date_time + " " + member.name + " ging von " + before.channel.name + " nach " + after.channel.name + "`")
  
 
-bot_token = Path('./token.txt').read_text()
+bot_token = os.getenv("DISCORD_TOKEN")
 
 client.run(bot_token)
