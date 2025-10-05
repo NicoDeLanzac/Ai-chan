@@ -3,7 +3,13 @@ import discord
 from datetime import datetime
 from pathlib import Path
 
-client = discord.Client()
+
+intents = discord.Intents.default()
+intents.voice_states = True
+intents.guilds = True
+
+client = discord.Client(intents=intents)
+
 
 @client.event
 async def on_ready():
