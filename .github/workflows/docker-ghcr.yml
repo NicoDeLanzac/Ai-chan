@@ -24,3 +24,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/nicodelanzac/ai-chan:latest
+
+      - name: Logout from GHCR
+        run: docker logout ghcr.io
