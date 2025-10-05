@@ -23,4 +23,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/ai-chan:latest
+          tags: ghcr.io/nicodelanzac/ai-chan:latest
